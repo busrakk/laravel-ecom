@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\BrandController;
+use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,8 +31,23 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
     Route::get('checkAuthenticated', function(){
         return response()->json(['message' => 'You are in', 'status'=>200], 200);
     });
+
+    Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\API'], function(){
+        //Category route
+        Route::post('category-list', 'CategoryController@index');
+        Route::post('category-store', 'CategoryController@store');
+    });
 });
 
 Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('logout', [AuthController::class, 'logout']);
 });
+
+// Route::get('/allcategory', [CategoryController::class, 'index']);
+// Route::get('/allcategory11', [CategoryController::class, 'AllCategory']);
+
+Route::get('/allcategory', [CategoryController::class, 'index']);
+Route::get('/allbrand', [BrandController::class, 'index']);
+Route::get('/allproduct', [ProductController::class, 'index']);
+Route::get('/productdetail/{id}', [ProductController::class, 'detail']);
+
