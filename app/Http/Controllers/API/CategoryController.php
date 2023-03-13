@@ -3,70 +3,29 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Interfaces\Repository\CategoryRepository;
+use App\Interfaces\Service\CategoryContact;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
-    private $categoryRepository;
+    private $categoryService;
 
-    public function __construct(CategoryRepository $categoryRepository)
+    public function __construct(CategoryContact $categoryService)
     {
-        $this->categoryRepository = $categoryRepository;
+        $this->categoryService = $categoryService;
     }
 
     // all category
     public function index()
     {
-        $response = $this->categoryRepository->getAll();
-
-        if($response){
-            return response()->json([
-                'data' => $response,
-                'success' => true,
-                'status' => 'success'
-            ]);
-        }
-
+        return response()->json($this->categoryService->getAll());
     }
 
-    public function store(Request $request)
+    public function findProduct($id)
     {
-        $validator = Validator::make($request->all(), [
-            'category_name' => 'bail|required|max:191',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->messages(),
-                'status' => 'validation-error'
-            ]);
-        }
-
-        $data = [
-            'category_name' => $request->category_name,
-            'category_image' => $request->category_image,
-        ];
-
-        try{
-            Category::create($data);
-
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Category Insert Successfuly',
-                    'status' => 'success'
-                ]);
-        }catch(\Throwable $th){
-            return response()->json([
-                'message' => 'Something went wrong!',
-                'status' => false
-            ]); 
-        }
-
+        return response()->json($this->categoryService->getByProduct($id));
     }
-
 
 }

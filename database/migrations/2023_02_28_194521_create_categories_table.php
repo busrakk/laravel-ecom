@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->text('description')->nullable();
+            // $table->text('description')->nullable();
             $table->boolean('featured')->default(0); // öne çıkan kategoriler
             $table->boolean('menu')->default(1); // kategoriyi göstermek veya gizlemek için kontrol 
             $table->string('image')->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

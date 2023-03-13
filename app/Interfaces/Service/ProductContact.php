@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Interfaces\Repository;
+namespace App\Interfaces\Service;
 use Illuminate\Http\Request;
 
-interface ProductRepository
+interface ProductContact
 {
     public function getAll();
     public function getById($id);

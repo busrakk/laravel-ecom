@@ -3,32 +3,23 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Interfaces\Repository\BrandRepository;
+use App\Interfaces\Service\BrandContact;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class BrandController extends Controller
 {
-    private $brandRepository;
+    private $brandService;
 
-    public function __construct(BrandRepository $brandRepository)
+    public function __construct(BrandContact $brandService)
     {
-        $this->brandRepository = $brandRepository;
+        $this->brandService = $brandService;
     }
 
     // all brand
     public function index()
     {
-        $response = $this->brandRepository->getAll();
-
-        if($response){
-            return response()->json([
-                'data' => $response,
-                'success' => true,
-                'status' => 'success'
-            ]);
-        }
-
+        return response()->json($this->brandService->getAll());
     }
 }

@@ -2,13 +2,21 @@
 
 namespace App\Repositories;
 use App\Interfaces\Repository\ProductRepository;
+use App\Models\Brand;
 use App\Models\Product;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ProductRepositoryEloquent implements ProductRepository{
 
     public function getAll()
     {
-        return Product::with(['user', 'brand'])->get();
+        return Product::with(['user', 'brand', 'images', 'categories' ])->get();
+    }
+
+    public function getById($id)
+    {
+        return Product::where('id', $id)->with(['user', 'brand', 'images', 'categories' ])->first();
+        // return Brand::where('id', $id)->with(['product'])->get();
     }
 
 }

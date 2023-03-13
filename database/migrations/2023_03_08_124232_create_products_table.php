@@ -17,12 +17,19 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('brand_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('name');
+            $table->string('description');
             $table->string('price');
-            $table->string('special_price');
-            $table->unsignedInteger('quantity');
-            $table->tinyInteger('in_stock')->default( 1 );
-            $table->tinyInteger('status')->default( 0 );
+            $table->string('special_price')->nullable();
+            $table->string('quantity')->nullable();
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->tinyInteger('in_stock')->default(1);
+            $table->tinyInteger('featured')->default(0)->nullable();
+            $table->tinyInteger("popular")->default(0)->nullable();
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -33,6 +40,11 @@ return new class extends Migration
             $table->foreign('brand_id')
             ->references('id')
             ->on('brands')
+            ->onDelete('cascade');
+
+            $table->foreign('category_id')
+            ->references('id')
+            ->on('categories')
             ->onDelete('cascade');
         });
     }

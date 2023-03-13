@@ -8,7 +8,8 @@ class BrandRepositoryEloquent implements BrandRepository{
 
     public function getAll()
     {
-        return Brand::all();
+        // return Brand::all();
+        return Brand::with(['products'])->get();
     }
 
 }

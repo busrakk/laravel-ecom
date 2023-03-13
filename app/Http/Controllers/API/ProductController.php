@@ -3,52 +3,29 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Interfaces\Repository\ProductRepository;
+use App\Interfaces\Service\ProductContact;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    private $productRepository;
+    private $productService;
 
-    public function __construct(ProductRepository $productRepository)
+    public function __construct(ProductContact $productService)
     {
-        $this->productRepository = $productRepository;
+        $this->productService = $productService;
     }
 
     // all category
     public function index()
     {
-        $response = $this->productRepository->getAll();
-
-        if($response){
-            return response()->json([
-                'data' => $response,
-                'success' => true,
-                'status' => 'success'
-            ]);
-        }
-
+        return response()->json($this->productService->getAll());
     }
-    // // all product
-    // public function index()
-    // {
-    //    // $brand = Brand::with(['products'])->get();
-    //    //$products = Product::all();
 
-    //    return Product::with(['user', 'categories'])->get();
-    //   // return response(['products' => $products]);
-    // //    return response([
-    // //        'data' => $products,
-    // //        'success' => true,
-    // //        'status' => 'success'
-    // //    ]);
+    public function find($id)
+    {
+        return response()->json($this->productService->getById($id));
+    }
 
-    // }
-
-    // public function detail($id)
-    // {
-    //     return Product::find($id);
-    // }
 }

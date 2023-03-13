@@ -34,8 +34,8 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
 
     Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\API'], function(){
         //Category route
-        Route::post('category-list', 'CategoryController@index');
-        Route::post('category-store', 'CategoryController@store');
+        // Route::post('category-list', 'CategoryController@index');
+        // Route::post('category-store', 'CategoryController@store');
     });
 });
 
@@ -49,5 +49,4 @@ Route::middleware(['auth:sanctum'])->group( function(){
 Route::get('/allcategory', [CategoryController::class, 'index']);
 Route::get('/allbrand', [BrandController::class, 'index']);
 Route::get('/allproduct', [ProductController::class, 'index']);
-Route::get('/productdetail/{id}', [ProductController::class, 'detail']);
-
+Route::get('/product/{id}', [ProductController::class, 'find']);
