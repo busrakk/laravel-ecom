@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('price');
             $table->string('special_price')->nullable();
-            $table->string('quantity')->nullable();
+            $table->integer('quantity');
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();
             $table->string('image3')->nullable();
