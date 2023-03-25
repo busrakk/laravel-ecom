@@ -45,4 +45,25 @@ class ProductService implements ProductContact{
             ];
         }
     }
+
+    public function saveProduct($data)
+    {
+        try {
+            $response = $this->productRepository->insert($data);
+
+            if($response){
+                return [
+                    'success' => true,
+                    'message' => 'Product Insert Successfully',
+                    'status' => 'success'
+                ];
+            }
+        }catch (\Throwable $th) {
+            return [
+                'message' => 'Something went wrong!',
+                'status' => false
+            ];
+        }
+
+    }
 }

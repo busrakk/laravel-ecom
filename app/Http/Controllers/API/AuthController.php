@@ -64,7 +64,7 @@ class AuthController extends Controller
         {
             return response()->json([
                 'success' => false,
-                'message' => 'Invalid Credentials',
+                'message' => 'Geçersiz kimlik bilgileri',
                 'status' => 'error'
             ]);
         }
@@ -81,7 +81,7 @@ class AuthController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => 'Logged in Successfully',
+            'message' => 'Başarıyla giriş yapıldı.',
             'username' => $user->name,
             'token' => $token,
             'role' => $role
@@ -92,7 +92,7 @@ class AuthController extends Controller
         $request->user()->tokens()->delete();
         return response()->json([
             'success' => true,
-            'message' => 'Logged Out Successfully',
+            'message' => 'Oturum Başarıyla Kapatıldı.',
         ]);
     }
 }
