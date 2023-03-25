@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BrandController;
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +43,9 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
 Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('product-save', [ProductController::class, 'store']);
+    Route::get('/product-user', [UserController::class, 'productByUser']);
+    Route::get('/product-user-count', [UserController::class, 'productByUserCount']);
+
 });
 
 // Route::get('/allcategory', [CategoryController::class, 'index']);
