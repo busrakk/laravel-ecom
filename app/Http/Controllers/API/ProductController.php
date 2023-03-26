@@ -110,4 +110,24 @@ class ProductController extends Controller
         }
     }
 
+    public function byFeatured()
+    {
+       $productList = Product::where('featured', '=', 1)->with(['user', 'brand', 'images', 'categories' ])->get();
+        
+        if($productList){
+            return response()->json([
+                'data' => $productList,
+                'success' => true,
+                'message' => 'Product by Featured Successfully Found.',
+                'status' => 'success'
+            ]);
+        }else{
+            return [
+                'message' => 'Product Not Found!',
+                'success' => false,
+                'status' => 'error'
+            ];
+        }
+    }
+
 }

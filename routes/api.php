@@ -26,6 +26,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // public
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+Route::get('/allcategory', [CategoryController::class, 'index']);
+Route::get('/allbrand', [BrandController::class, 'index']);
+Route::get('/allproduct', [ProductController::class, 'index']);
+Route::get('/product/{category_id}', [ProductController::class, 'find']);
+Route::get('/product/category/{category_id}', [ProductController::class, 'byCategory']);
+Route::get('/product/brand/{brand_id}', [ProductController::class, 'byBrand']);
+Route::get('/featured', [ProductController::class, 'byFeatured']);
 
 //protected
 Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
@@ -45,16 +52,5 @@ Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('product-save', [ProductController::class, 'store']);
     Route::get('/product-user', [UserController::class, 'productByUser']);
     Route::get('/product-user-count', [UserController::class, 'productByUserCount']);
-
 });
-
-// Route::get('/allcategory', [CategoryController::class, 'index']);
-// Route::get('/allcategory11', [CategoryController::class, 'AllCategory']);
-
-Route::get('/allcategory', [CategoryController::class, 'index']);
-Route::get('/allbrand', [BrandController::class, 'index']);
-Route::get('/allproduct', [ProductController::class, 'index']);
-Route::get('/product/{category_id}', [ProductController::class, 'find']);
-Route::get('/product/category/{category_id}', [ProductController::class, 'byCategory']);
-Route::get('/product/brand/{brand_id}', [ProductController::class, 'byBrand']);
 
