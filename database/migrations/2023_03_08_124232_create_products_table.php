@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('image3')->nullable();
             $table->tinyInteger('in_stock')->default(1);
             $table->tinyInteger('featured')->default(0)->nullable();
-            $table->tinyInteger("popular")->default(0)->nullable();
+            $table->tinyInteger("type")->default(1)->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
 

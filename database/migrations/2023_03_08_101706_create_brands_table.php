@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('logo')->nullable();
+            $table->boolean('featured')->default(0); // öne çıkan kategoriler
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

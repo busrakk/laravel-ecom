@@ -14,12 +14,6 @@ class Category extends Model
 
     protected $guarded = [];
 
-    protected $casts = [
-        'parent_id' =>  'integer',
-        'featured'  =>  'boolean',
-        'menu'=>  'boolean'
-    ];
-
     public function products()
     {
         return $this->hasMany(Product::class);

@@ -10,7 +10,7 @@ class CategoryRepositoryEloquent implements CategoryRepository{
     public function getAll()
     {
         // return Category::all();
-       return Category::with(['products'])->get()->sortBy('name');
+       return Category::with(['products'])->get();
     }
 
 }

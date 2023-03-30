@@ -23,9 +23,4 @@ class CategoryController extends Controller
         return response()->json($this->categoryService->getAll());
     }
 
-    public function findProduct($id)
-    {
-        return response()->json($this->categoryService->getByProduct($id));
-    }
-
 }
