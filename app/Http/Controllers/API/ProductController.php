@@ -130,4 +130,44 @@ class ProductController extends Controller
         }
     }
 
+    public function bySale()
+    {
+       $productList = Product::where('type', '=', 1)->with(['user', 'brand', 'images', 'categories' ])->get();
+        
+        if($productList){
+            return response()->json([
+                'data' => $productList,
+                'success' => true,
+                'message' => 'Product by Featured Successfully Found.',
+                'status' => 'success'
+            ]);
+        }else{
+            return [
+                'message' => 'Product Not Found!',
+                'success' => false,
+                'status' => 'error'
+            ];
+        }
+    }
+
+    public function bySearch()
+    {
+       $productList = Product::where('type', '=', 0)->with(['user', 'brand', 'images', 'categories' ])->get();
+        
+        if($productList){
+            return response()->json([
+                'data' => $productList,
+                'success' => true,
+                'message' => 'Product by Featured Successfully Found.',
+                'status' => 'success'
+            ]);
+        }else{
+            return [
+                'message' => 'Product Not Found!',
+                'success' => false,
+                'status' => 'error'
+            ];
+        }
+    }
+
 }

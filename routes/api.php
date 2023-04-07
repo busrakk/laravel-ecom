@@ -33,6 +33,9 @@ Route::get('/product/{category_id}', [ProductController::class, 'find']);
 Route::get('/product/category/{category_id}', [ProductController::class, 'byCategory']);
 Route::get('/product/brand/{brand_id}', [ProductController::class, 'byBrand']);
 Route::get('/featured', [ProductController::class, 'byFeatured']);
+Route::get('/sell-product', [ProductController::class, 'bySale']);
+Route::get('/search-product', [ProductController::class, 'bySearch']);
+
 
 //protected
 Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
