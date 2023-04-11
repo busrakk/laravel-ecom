@@ -19,6 +19,11 @@ class ProductRepositoryEloquent implements ProductRepository{
         // return Brand::where('id', $id)->with(['product'])->get();
     }
 
+    public function getById1($id)
+    {
+        return Product::where('id', $id)->first();
+    }
+
     public function insert($data)
     {
         return Product::create($data);

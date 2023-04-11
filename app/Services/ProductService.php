@@ -66,4 +66,24 @@ class ProductService implements ProductContact{
         }
 
     }
+
+    public function findDataById($id)
+    {
+        $response = $this->productRepository->getById1($id);
+
+        if($response){
+            return [
+                'data' => $response,
+                'success' => true,
+                'status' => 'success'
+            ];
+        }else{
+            return [
+                'data' => null,
+                'success' => true,
+                'status' => 'error'
+            ];
+        }
+
+    }
 }

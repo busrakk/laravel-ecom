@@ -57,6 +57,7 @@ Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('/user-update', [UserController::class, 'update']);
     Route::post('product-save', [ProductController::class, 'store']);
     Route::get('/product-user', [UserController::class, 'productByUser']);
+    Route::post('product-details', [ProductController::class, 'find1']);
     Route::get('/product-user-count', [UserController::class, 'productByUserCount']);
     Route::post('/category-dropdown-list', [CategoryController::class,'getCategoryForDropdown']);
     Route::post('/product-list', [ProductController::class, 'index']);

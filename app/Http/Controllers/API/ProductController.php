@@ -29,6 +29,11 @@ class ProductController extends Controller
     {
         return response()->json($this->productService->getById($id));
     } 
+
+    public function find1(Request $request)
+    {
+        return response()->json($this->productService->findDataById($request->id));
+    }
     
     public function store(Request $request)
     {
