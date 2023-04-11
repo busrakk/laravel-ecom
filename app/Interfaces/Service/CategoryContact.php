@@ -6,4 +6,5 @@ use Illuminate\Http\Request;
 interface CategoryContact
 {
     public function getAll();
+    public function getCategoryForDropdown();
 }

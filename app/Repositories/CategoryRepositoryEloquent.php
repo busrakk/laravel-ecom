@@ -13,4 +13,9 @@ class CategoryRepositoryEloquent implements CategoryRepository{
        return Category::with(['products'])->get();
     }
 
+    public function getByWhere($column=['*'], $where)
+    {
+        return Category::select($column)->where($where)->get();
+    } 
+
 }

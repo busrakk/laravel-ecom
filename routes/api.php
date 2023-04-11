@@ -58,5 +58,7 @@ Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('product-save', [ProductController::class, 'store']);
     Route::get('/product-user', [UserController::class, 'productByUser']);
     Route::get('/product-user-count', [UserController::class, 'productByUserCount']);
+    Route::post('/category-dropdown-list', [CategoryController::class,'getCategoryForDropdown']);
+    Route::post('/product-list', [ProductController::class, 'index']);
 });
 
