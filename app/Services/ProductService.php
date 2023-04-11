@@ -86,4 +86,25 @@ class ProductService implements ProductContact{
         }
 
     }
+
+    // delete
+    public function deleteProduct($id)
+    {
+        try {
+            $response = $this->productRepository->delete($id);
+
+            if($response){
+                return [
+                    'success' => true,
+                    'message' => 'Product Deleted Successfully',
+                    'status' => 'success'
+                ];
+            }
+        }catch (\Throwable $th) {
+            return [
+                'message' => 'Something went wrong!',
+                'status' => false
+            ];
+        }
+    }
 }

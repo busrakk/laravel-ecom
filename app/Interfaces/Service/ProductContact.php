@@ -9,4 +9,5 @@ interface ProductContact
     public function getById($id);
     public function saveProduct($data);
     public function findDataById($id);
+    public function deleteProduct($id);
 }

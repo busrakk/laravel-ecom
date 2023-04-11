@@ -85,6 +85,12 @@ class ProductController extends Controller
 
     }
 
+    // delete
+    public function destroy($id)
+    {
+        return response()->json($this->productService->deleteProduct($id));
+    }
+
     public function byCategory(Request $request)
     {
         $category_id = $request->category_id;

@@ -9,4 +9,5 @@ interface ProductRepository
     public function getById($id);
     public function insert($data);
     public function getById1($id);
+    public function delete($id);
 }
