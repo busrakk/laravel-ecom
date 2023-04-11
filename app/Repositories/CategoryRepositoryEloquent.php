@@ -13,6 +13,12 @@ class CategoryRepositoryEloquent implements CategoryRepository{
        return Category::with(['products'])->get();
     }
 
+    // delete
+    public function delete($id)
+    {
+        return Category::where('id', $id)->delete();
+    }
+
     public function getByWhere($column=['*'], $where)
     {
         return Category::select($column)->where($where)->get();

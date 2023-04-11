@@ -30,6 +30,27 @@ class CategoryService implements CategoryContact{
         }
     }
 
+    // delete
+    public function deleteCategory($id)
+    {
+        try {
+            $response = $this->categoryRepository->delete($id);
+
+            if($response){
+                return [
+                    'success' => true,
+                    'message' => 'Category Deleted Successfully',
+                    'status' => 'success'
+                ];
+            }
+        }catch (\Throwable $th) {
+            return [
+                'message' => 'Something went wrong!',
+                'status' => false
+            ];
+        }
+    }
+
     public function getCategoryForDropdown()
     {
         $response = $this->categoryRepository->getByWhere(['id', 'name'], [['status', Category::STATUS_ACTIVE]]);

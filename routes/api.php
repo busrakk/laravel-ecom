@@ -61,5 +61,6 @@ Route::middleware(['auth:sanctum'])->group( function(){
     Route::get('/product-user-count', [UserController::class, 'productByUserCount']);
     Route::post('/category-dropdown-list', [CategoryController::class,'getCategoryForDropdown']);
     Route::post('/product-list', [ProductController::class, 'index']);
+    Route::post('/category-delete/{id}', [CategoryController::class, 'destroy']);
 });
 
