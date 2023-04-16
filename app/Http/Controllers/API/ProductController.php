@@ -38,14 +38,14 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            // 'user' => 'bail|required',
-            // 'category' => 'bail|required',
+            //'user' => 'bail|required',
+            'category' => 'bail|required',
             // 'brand' => 'bail|required',
             'name' => 'bail|required|max:191',
             'description' => 'bail|required|max:191',
             'price' => 'bail|required|max:20',
             'quantity' => 'bail|required|max:4',
-            //'image1' => 'bail|required|image|mimes:jpeg,png,jpg|max:2048',
+            'image.*' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
         ]);
 
         if ($validator->fails()) {
@@ -59,7 +59,7 @@ class ProductController extends Controller
         $data = [
             'user_id' => Auth::user()->id,
             'category_id' => $request->category,
-            'brand_id' => $request->brand,
+            'brand_id' => $request->category,
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
@@ -67,18 +67,18 @@ class ProductController extends Controller
             'quantity' => $request->quantity,
             'in_stock' => $request->in_stock,
             'featured' => $request->featured,
-            'popular' => $request->popular,
+            'type' => $request->type,
             'status' => $request->status,
-            'image1' => $request->image1
+            // 'image' => $request->image
         ];
 
-        if($request->hasFile('image1')){
-            $file = $request->file('image1');
+        if($request->hasFile('image')){
+            $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time(). '.' . $extension; 
             $file->move('uploads/images/product/', $filename); 
 
-            $data['image1'] = 'uploads/images/product/'.$filename;
+            $data['image'] = 'uploads/images/product/'.$filename;
         }
 
         return response()->json($this->productService->saveProduct($data));

@@ -39,13 +39,13 @@ class CategoryService implements CategoryContact{
             if($response){
                 return [
                     'success' => true,
-                    'message' => 'Category Deleted Successfully',
+                    'message' => 'Kategori Başarıyla Silindi',
                     'status' => 'success'
                 ];
             }
         }catch (\Throwable $th) {
             return [
-                'message' => 'Something went wrong!',
+                'message' => 'Bir şeyler ters gitti!',
                 'status' => false
             ];
         }

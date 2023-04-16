@@ -29,4 +29,24 @@ class BrandService implements BrandContact{
             ];
         }
     }
+
+    public function deleteBrand($id)
+    {
+        try{
+            $response = $this->brandRepository->delete($id);
+
+            if($response){
+                return [
+                    'success' => true,
+                    'message' => "Marka Başarıyla Silindi.",
+                    'status' => 'success'
+                ];
+            }
+        }catch(\Throwable $th){
+            return [
+                'message' => "Bir şeyler ters gitti!",
+                "status" => false
+            ];
+        }
+    }
 }

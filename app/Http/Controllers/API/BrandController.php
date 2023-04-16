@@ -22,4 +22,10 @@ class BrandController extends Controller
     {
         return response()->json($this->brandService->getAll());
     }
+
+    // delete
+    public function destroy($id)
+    {
+        return response()->json($this->brandService->deleteBrand($id));
+    }
 }

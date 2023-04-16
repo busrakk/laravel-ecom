@@ -26,9 +26,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // public
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
-Route::get('/allcategory', [CategoryController::class, 'index']);
-Route::get('/allbrand', [BrandController::class, 'index']);
-Route::get('/allproduct', [ProductController::class, 'index']);
+Route::post('/allcategory', [CategoryController::class, 'index']);
+Route::post('/allbrand', [BrandController::class, 'index']);
+Route::post('/allproduct', [ProductController::class, 'index']);
 Route::get('/product/{category_id}', [ProductController::class, 'find']);
 Route::get('/product/category/{category_id}', [ProductController::class, 'byCategory']);
 Route::get('/product/brand/{brand_id}', [ProductController::class, 'byBrand']);
@@ -44,24 +44,28 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
     });
 
     Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\API'], function(){
-        //Category route
-        // Route::post('category-list', 'CategoryController@index');
+        // Category route
+        Route::post('category-list', 'CategoryController@index');
         // Route::post('category-store', 'CategoryController@store');
+        Route::post('/category-delete/{id}', 'CategoryController@destroy');
+        // brand route
+        Route::post('brand-list', 'BrandController@index');
+        Route::post('/brand-delete/{id}', 'BrandController@destroy');
+        // product route
+        Route::post('/product-list','ProductController@index');
     });
 });
 
 Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('logout', [AuthController::class, 'logout']);
     Route::get('/user', [UserController::class, 'user']);
-    Route::get('/user', [UserController::class, 'user']);
     Route::post('/user-update', [UserController::class, 'update']);
     Route::post('product-save', [ProductController::class, 'store']);
-    Route::get('/product-user', [UserController::class, 'productByUser']);
+    Route::post('product-update/{id}', [ProductController::class, 'update']);
+    Route::post('/product-user-list', [UserController::class, 'productByUser']);
     Route::post('product-details', [ProductController::class, 'find1']);
     Route::post('product-delete/{id}', [ProductController::class,'destroy']);
     Route::get('/product-user-count', [UserController::class, 'productByUserCount']);
     Route::post('/category-dropdown-list', [CategoryController::class,'getCategoryForDropdown']);
-    Route::post('/product-list', [ProductController::class, 'index']);
-    Route::post('/category-delete/{id}', [CategoryController::class, 'destroy']);
 });
 

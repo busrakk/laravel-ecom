@@ -12,4 +12,10 @@ class BrandRepositoryEloquent implements BrandRepository{
         return Brand::with(['products'])->get();
     }
 
+    // delete
+    public function delete($id)
+    {
+        return Brand::where('id', $id)->delete();
+    }
+
 }

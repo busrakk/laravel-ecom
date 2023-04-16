@@ -23,9 +23,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('special_price')->nullable();
             $table->integer('quantity');
-            $table->string('image1')->nullable();
-            $table->string('image2')->nullable();
-            $table->string('image3')->nullable();
+            $table->string('image')->nullable();
             $table->tinyInteger('in_stock')->default(1);
             $table->tinyInteger('featured')->default(0)->nullable();
             $table->tinyInteger("type")->default(1)->nullable();
