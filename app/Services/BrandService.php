@@ -49,4 +49,26 @@ class BrandService implements BrandContact{
             ];
         }
     }
+
+    public function saveBrand($data)
+    {
+        try {
+            $response = $this->brandRepository->insert($data);
+
+            if($response){
+                return [
+                    'data' => $response,
+                    'success' => true,
+                    'message' => 'Marka Başarıyla Eklendi.',
+                    'status' => 'success'
+                ];
+            }
+        }catch (\Throwable $th) {
+            return [
+                'message' => 'Bir şeyler ters gitti!',
+                'status' => false
+            ];
+        }
+
+    }
 }

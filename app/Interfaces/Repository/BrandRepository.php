@@ -7,4 +7,5 @@ interface BrandRepository
 {
     public function getAll();
     public function delete($id);
+    public function insert($data);
 }

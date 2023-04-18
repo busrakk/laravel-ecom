@@ -45,7 +45,7 @@ class ProductController extends Controller
             'description' => 'bail|required|max:191',
             'price' => 'bail|required|max:20',
             'quantity' => 'bail|required|max:4',
-            'image.*' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+            'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -78,7 +78,7 @@ class ProductController extends Controller
             $filename = time(). '.' . $extension; 
             $file->move('uploads/images/product/', $filename); 
 
-            $data['image'] = 'uploads/images/product/'.$filename;
+            $data['image'] = 'http://127.0.0.1:8000/uploads/images/product/'.$filename;
         }
 
         return response()->json($this->productService->saveProduct($data));

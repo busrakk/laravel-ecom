@@ -51,6 +51,7 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
         // brand route
         Route::post('brand-list', 'BrandController@index');
         Route::post('/brand-delete/{id}', 'BrandController@destroy');
+        Route::post('brand-store', 'BrandController@store');
         // product route
         Route::post('/product-list','ProductController@index');
     });
@@ -58,7 +59,7 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
 
 Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('logout', [AuthController::class, 'logout']);
-    Route::get('/user', [UserController::class, 'user']);
+    Route::post('/user', [UserController::class, 'user']);
     Route::post('/user-update', [UserController::class, 'update']);
     Route::post('product-save', [ProductController::class, 'store']);
     Route::post('product-update/{id}', [ProductController::class, 'update']);

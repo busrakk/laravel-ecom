@@ -18,4 +18,9 @@ class BrandRepositoryEloquent implements BrandRepository{
         return Brand::where('id', $id)->delete();
     }
 
+    public function insert($data)
+    {
+        return Brand::create($data);
+    }
+
 }

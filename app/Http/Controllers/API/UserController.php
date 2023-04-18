@@ -61,6 +61,12 @@ class UserController extends Controller
                 'message' => 'Profile Successfully Found.',
                 'status' => 'success'
             ]);
+        }else{
+            return [
+                'message' => 'User Not Found!',
+                'success' => false,
+                'status' => 'error'
+            ];
         }
     }
 
