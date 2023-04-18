@@ -78,11 +78,60 @@ class ProductController extends Controller
             $filename = time(). '.' . $extension; 
             $file->move('uploads/images/product/', $filename); 
 
-            $data['image'] = 'http://127.0.0.1:8000/uploads/images/product/'.$filename;
+            $data['image'] = 'uploads/images/product/'.$filename;
         }
 
         return response()->json($this->productService->saveProduct($data));
 
+    }
+
+    // update
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            //'user' => 'bail|required',
+            'category' => 'bail|required',
+            // 'brand' => 'bail|required',
+            'name' => 'bail|required|max:191',
+            'description' => 'bail|required|max:191',
+            'price' => 'bail|required|max:20',
+            'quantity' => 'bail|required|max:4',
+            // 'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->messages(),
+                'status' => 'validation-error'
+            ]);
+        }
+
+        $data = [
+            'user_id' => Auth::user()->id,
+            'category_id' => $request->category,
+            'brand_id' => $request->category,
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'special_price' => $request->special_price,
+            'quantity' => $request->quantity,
+            'in_stock' => $request->in_stock,
+            'featured' => $request->featured,
+            'type' => $request->type,
+            'status' => $request->status,
+        ];
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' . $extension; 
+            $file->move('uploads/images/product/', $filename); 
+
+            $data['image'] = 'uploads/images/product/'.$filename;
+        }
+
+        return response()->json($this->productService->UpdateProduct($data, $id));
     }
 
     // delete

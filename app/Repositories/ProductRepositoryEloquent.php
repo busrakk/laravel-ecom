@@ -29,6 +29,12 @@ class ProductRepositoryEloquent implements ProductRepository{
         return Product::create($data);
     }
 
+    // update
+    public function update($id, $data)
+    {
+        return Product::where('id', $id)->update($data);
+    }
+
     // delete
     public function delete($id)
     {

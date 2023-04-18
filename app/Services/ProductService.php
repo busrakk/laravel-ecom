@@ -67,6 +67,26 @@ class ProductService implements ProductContact{
 
     }
 
+    public function updateProduct($data, $id)
+    {
+        try{
+            $response = $this->productRepository->update($id, $data);
+
+            if($response){
+                return[
+                    'success' => true,
+                    'message' => "Ürün Başarıyla Güncellendi.",
+                    'satatus' => 'success'
+                ];
+            }
+        }catch(\Throwable $th){
+            return[
+                'message' => 'Bir şeyler ters gitti!',
+                'status' => false,
+            ];
+        }
+    }
+
     public function findDataById($id)
     {
         $response = $this->productRepository->getById1($id);
