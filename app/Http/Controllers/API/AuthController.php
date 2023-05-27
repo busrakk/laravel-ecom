@@ -14,11 +14,11 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'bail|required|max:191',
+            'name' => 'bail|required|max:191|unique:users',
             'email' => 'bail|required|email|max:191|unique:users',
             'password' => 'bail|required|confirmed|min:6',
         ]);
-
+        
         if ($validator->fails()) {
             return response()->json([
                 'success' => false,
@@ -32,7 +32,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
-        $token = $user->createToken($user->email . '_token')->plainTextToken;
+        $token = $user->createToken($user->email . '_token', ['server:user'])->plainTextToken;
 
         return response()->json([
             'success' => true,
@@ -76,7 +76,7 @@ class AuthController extends Controller
             $token = $user->createToken($user->email . '_AdminToken', ['server:admin'])->plainTextToken;
         }else{
             $role = '';
-            $token = $user->createToken($user->email . '_token', [''])->plainTextToken;
+            $token = $user->createToken($user->email . '_token', ['server:user'])->plainTextToken;
         }
 
         return response()->json([
