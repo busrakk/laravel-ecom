@@ -230,4 +230,12 @@ class ProductController extends Controller
         }
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->input('search');
+        $results = Product::search($query);
+
+        return response()->json($results);
+    }
+
 }

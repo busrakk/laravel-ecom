@@ -35,6 +35,7 @@ Route::get('/product/brand/{brand_id}', [ProductController::class, 'byBrand']);
 Route::get('/featured', [ProductController::class, 'byFeatured']);
 Route::get('/sell-product', [ProductController::class, 'bySale']);
 Route::get('/search-product', [ProductController::class, 'bySearch']);
+Route::post('/products', [ProductController::class, 'search']);
 
 
 //protected

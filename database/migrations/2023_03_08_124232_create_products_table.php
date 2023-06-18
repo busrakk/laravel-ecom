@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -45,6 +46,9 @@ return new class extends Migration
             ->on('categories')
             ->onDelete('cascade');
         });
+
+        // Tam metin indeksi oluşturma
+        DB::statement('ALTER TABLE products ADD FULLTEXT INDEX idx_name (name)'); 
     }
 
     /**

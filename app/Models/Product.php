@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Product extends Model
 {
@@ -13,6 +14,16 @@ class Product extends Model
     const STATUS_INACTIVE = 0;
 
     protected $guarded = [];
+    protected $table = 'products';
+
+    // Boşluk İndeksi Algoritması
+    public static function search($query)
+    {
+        return DB::table('products')
+            ->select('id', 'name')
+            ->whereRaw('MATCH(name) AGAINST(? IN BOOLEAN MODE)', [$query])
+            ->get();
+    }
 
     public function images()
     {
