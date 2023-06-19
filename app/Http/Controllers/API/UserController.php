@@ -88,4 +88,17 @@ class UserController extends Controller
         }
     }
 
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        
+        $products = Product::where('user_id', $user->id)
+        ->with(['user', 'brand', 'images', 'categories'])
+        ->orderBy('created_at', 'DESC')
+        ->get();
+
+        $user->products = $products;
+        return response()->json(['user' => $user]);
+    }
+
 }
