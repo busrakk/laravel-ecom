@@ -36,7 +36,7 @@ Route::get('/featured', [ProductController::class, 'byFeatured']);
 Route::get('/sell-product', [ProductController::class, 'bySale']);
 Route::get('/search-product', [ProductController::class, 'bySearch']);
 Route::post('/products', [ProductController::class, 'search']);
-
+Route::get('/sorting', [ProductController::class, 'sort']);
 
 //protected
 Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){

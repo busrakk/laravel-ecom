@@ -230,12 +230,29 @@ class ProductController extends Controller
         }
     }
 
+    // http://127.0.0.1:8000/api/products?search=${query}
     public function search(Request $request)
     {
         $query = $request->input('search');
         $results = Product::search($query);
 
         return response()->json($results);
+    }
+
+    // http://127.0.0.1:8000/api/sorting?sortBy=price
+    public function sort(Request $request)
+    {
+        $sortBy = $request->input('sortBy');
+    
+        $validColumns = ['name', 'price']; // Geçerli sıralama sütunları
+    
+        if (in_array($sortBy, $validColumns)) {
+            $sortedProducts = Product::orderBy($sortBy)->with(['user', 'brand', 'images', 'categories'])->get();
+    
+            return response()->json($sortedProducts);
+        } else {
+            return response()->json(['error' => 'Invalid sortBy parameter'], 400);
+        }
     }
 
 }
