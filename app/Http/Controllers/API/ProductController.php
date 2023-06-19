@@ -243,11 +243,20 @@ class ProductController extends Controller
     public function sort(Request $request)
     {
         $sortBy = $request->input('sortBy');
+        $sortOrder = $request->input('sortOrder');
     
         $validColumns = ['name', 'price']; // Geçerli sıralama sütunları
     
         if (in_array($sortBy, $validColumns)) {
-            $sortedProducts = Product::orderBy($sortBy)->with(['user', 'brand', 'images', 'categories'])->get();
+            // $sortedProducts = Product::orderBy($sortBy)->with(['user', 'brand', 'images', 'categories'])->get();
+
+            if ($sortOrder === 'desc') {
+                // Yüksekten düşüğe sıralama işlemi
+                $sortedProducts = Product::orderBy($sortBy, 'desc')->with(['user', 'brand', 'images', 'categories'])->get();
+            } else {
+                // Düşükten yükseğe sıralama işlemi (varsayılan)
+                $sortedProducts = Product::orderBy($sortBy)->with(['user', 'brand', 'images', 'categories'])->get();
+            }
     
             return response()->json($sortedProducts);
         } else {
