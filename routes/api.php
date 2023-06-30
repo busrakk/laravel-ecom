@@ -56,6 +56,8 @@ Route::middleware(['auth:sanctum', 'isAPIAdmin'])->group( function(){
         Route::post('brand-list', 'BrandController@index');
         Route::post('/brand-delete/{id}', 'BrandController@destroy');
         Route::post('brand-store', 'BrandController@store');
+        Route::post('brand-update/{id}', 'BrandController@update');
+        Route::post('brand/{id}', 'BrandController@find');
         // product route
         Route::post('/product-list','ProductController@index');
     });

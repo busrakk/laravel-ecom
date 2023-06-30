@@ -23,6 +23,16 @@ class BrandRepositoryEloquent implements BrandRepository{
         return Brand::create($data);
     }
 
+    public function update($id, $data)
+    {
+        return Brand::where('id', $id)->update($data);
+    }
+
+    public function getById($id)
+    {
+        return Brand::where('id', $id)->first();
+    }
+
     public function getByWhere($column=['*'], $where)
     {
         return Brand::select($column)->where($where)->get();

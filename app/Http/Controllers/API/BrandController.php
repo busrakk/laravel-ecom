@@ -34,7 +34,7 @@ class BrandController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'logo' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            // 'logo' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -48,7 +48,7 @@ class BrandController extends Controller
         $data = [
             'name' => $request->name,
             'featured' => $request->featured,
-            'status' => $request->status
+            'status' => $request->status == true ? '1':'0'
         ];
 
         if ($request->hasFile('logo')) {
@@ -62,6 +62,40 @@ class BrandController extends Controller
         }
 
         return response()->json($this->brandService->saveBrand($data));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            // 'logo' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->messages(),
+                'status' => 'validation-error'
+            ], 422);
+        }
+
+        $data = [
+            'name' => $request->name,
+            'featured' => $request->featured,
+            'status' => $request->status == true ? '1':'0'
+        ];
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' . $extension;
+            $file->move('uploads/images/logo/', $filename);
+
+            # $data['logo'] = 'http://127.0.0.1:8000/uploads/images/logo/'.$filename;
+            $data['logo'] = 'uploads/images/logo/'.$filename;
+        }
+
+        return response()->json($this->brandService->updateBrand($data, $id));
     }
 
     public function getBrandForDropdown()

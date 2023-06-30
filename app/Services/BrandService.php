@@ -72,6 +72,45 @@ class BrandService implements BrandContact{
 
     }
 
+    public function findDataById($id)
+    {
+        $response = $this->brandRepository->getById($id);
+
+        if($response){
+            return [
+                'data' => $response,
+                'success' => true,
+                'status' => 'success'
+            ];
+        }else{
+            return [
+                'message' => 'Marka Bulunamadı!',
+                'success' => false,
+                'status' => 'error'
+            ];
+        }
+    }
+
+    public function updateBrand($data, $id)
+    {
+        try {
+            $response = $this->brandRepository->update($id, $data);
+
+            if($response){
+                return [
+                    'success' => true,
+                    'message' => 'Marka Başarıyla Güncellendi',
+                    'status' => 'success'
+                ];
+            }
+        }catch (\Throwable $th) {
+            return [
+                'message' => 'Bir şeyler ters gitti!',
+                'status' => false
+            ];
+        }
+    }
+
     public function getBrandForDropdown()
     {
         $response = $this->brandRepository->getByWhere(['id', 'name'], [['status', Brand::STATUS_ACTIVE]]);
