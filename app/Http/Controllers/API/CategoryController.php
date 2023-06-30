@@ -29,6 +29,75 @@ class CategoryController extends Controller
         return response()->json($this->categoryService->deleteCategory($id));
     }
 
+    public function find($id)
+    {
+        return response()->json($this->categoryService->findDataById($id));
+    }
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'bail|required|max:191'
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->messages(),
+                'status' => 'validation-error'
+            ]);
+        }
+
+        $data = [
+            'name' => $request->name,
+            'featured' => $request->featured,
+            'status' => $request->status == true ? '1':'0'
+        ];
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' . $extension; 
+            $file->move('uploads/images/category/', $filename); 
+
+            $data['image'] = 'uploads/images/category/'.$filename;
+        }
+
+        return response()->json($this->categoryService->saveCategory($data));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'bail|required|max:191'
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->messages(),
+                'status' => 'validation-error'
+            ]);
+        }
+
+        $data = [
+            'name' => $request->name,
+            'featured' => $request->featured,
+            'status' => $request->status == true ? '1':'0'
+        ];
+
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time(). '.' . $extension; 
+            $file->move('uploads/images/category/', $filename); 
+
+            $data['image'] = 'uploads/images/category/'.$filename;
+        }
+
+        return response()->json($this->categoryService->updateCategory($data, $id));
+    }
+
 
     public function getCategoryForDropdown()
     {

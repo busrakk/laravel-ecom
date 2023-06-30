@@ -51,6 +51,66 @@ class CategoryService implements CategoryContact{
         }
     }
 
+    public function findDataById($id)
+    {
+        $response = $this->categoryRepository->getById($id);
+
+        if($response){
+            return [
+                'data' => $response,
+                'success' => true,
+                'status' => 'success'
+            ];
+        }else{
+            return [
+                'message' => 'Kategori Bulunamadı!',
+                'success' => false,
+                'status' => 'error'
+            ];
+        }
+    }
+
+    public function saveCategory($data)
+    {
+        try {
+            $response = $this->categoryRepository->insert($data);
+
+            if($response){
+                return [
+                    'success' => true,
+                    'message' => 'Kategori Başarıyla Eklendi',
+                    'status' => 'success'
+                ];
+            }
+        }catch (\Throwable $th) {
+            return [
+                'message' => 'Something went wrong!',
+                'status' => false
+            ];
+        }
+
+    }
+
+    public function updateCategory($data, $id)
+    {
+        try {
+            $response = $this->categoryRepository->update($id, $data);
+
+            if($response){
+                return [
+                    'success' => true,
+                    'message' => 'Kategori Başarıyla Güncellendi',
+                    'status' => 'success'
+                ];
+            }
+        }catch (\Throwable $th) {
+            return [
+                'message' => 'Something went wrong!',
+                'status' => false
+            ];
+        }
+    }
+
     public function getCategoryForDropdown()
     {
         $response = $this->categoryRepository->getByWhere(['id', 'name'], [['status', Category::STATUS_ACTIVE]]);

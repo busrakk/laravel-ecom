@@ -11208,3 +11208,7 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2023-06-30 19:00:16] local.ERROR: Class App\Services\CategoryService contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\Interfaces\Service\CategoryContact::getCategoryByWhere) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Class App\\Services\\CategoryService contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\\Interfaces\\Service\\CategoryContact::getCategoryByWhere) at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\app\\Services\\CategoryService.php:11)
+[stacktrace]
+#0 {main}
+"} 
