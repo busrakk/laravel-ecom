@@ -39,4 +39,10 @@ class CategoryRepositoryEloquent implements CategoryRepository{
         return Category::select($column)->where($where)->get();
     } 
 
+    public function countCategory()
+    {
+        return Category::where('status', Category::STATUS_ACTIVE)->count();
+    }
+
+
 }

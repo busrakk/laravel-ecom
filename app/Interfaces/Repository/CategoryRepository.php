@@ -11,4 +11,5 @@ interface CategoryRepository
    public function insert($data);
    public function update($id, $data);
    public function getByWhere($column=['*'], $where);
+   public function countCategory();
 }

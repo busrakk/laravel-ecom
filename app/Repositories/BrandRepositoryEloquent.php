@@ -38,4 +38,10 @@ class BrandRepositoryEloquent implements BrandRepository{
         return Brand::select($column)->where($where)->get();
     } 
 
+    public function countBrand()
+    {
+        return Brand::where('status', Brand::STATUS_ACTIVE)->count();
+    }
+
+
 }

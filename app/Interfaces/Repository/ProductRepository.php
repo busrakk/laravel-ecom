@@ -11,4 +11,5 @@ interface ProductRepository
     public function update($data, $id);
     public function getById1($id);
     public function delete($id);
+    public function countProduct();
 }

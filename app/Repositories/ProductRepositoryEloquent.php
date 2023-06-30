@@ -41,4 +41,9 @@ class ProductRepositoryEloquent implements ProductRepository{
         return Product::where('id', $id)->delete();
     }
 
+    public function countProduct()
+    {
+        return Product::count();
+    }
+
 }
