@@ -11088,3 +11088,123 @@ Stack trace:
 #37 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\ASUS\\\\D...')
 #38 {main}
 "} 
+[2023-06-22 10:23:06] local.ERROR: The "--columns" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--columns\" option does not exist. at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php:217)
+[stacktrace]
+#0 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(144): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('columns', 'uri,name,action...')
+#1 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(79): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--columns=uri,n...')
+#2 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(68): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('--columns=uri,n...', true)
+#3 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\Input.php(52): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Command\\Command.php(271): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(153): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(1022): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-06-22 10:23:09] local.ERROR: The "--columns" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--columns\" option does not exist. at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php:217)
+[stacktrace]
+#0 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(144): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('columns', 'uri,name,action...')
+#1 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(79): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--columns=uri,n...')
+#2 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(68): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('--columns=uri,n...', true)
+#3 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\Input.php(52): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Command\\Command.php(271): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(153): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(1022): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-06-22 10:23:12] local.ERROR: The "--columns" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--columns\" option does not exist. at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php:217)
+[stacktrace]
+#0 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(144): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('columns', 'uri,name,action...')
+#1 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(79): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--columns=uri,n...')
+#2 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(68): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('--columns=uri,n...', true)
+#3 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\Input.php(52): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Command\\Command.php(271): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(153): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(1022): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-06-26 11:17:29] local.ERROR: The "--columns" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--columns\" option does not exist. at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php:217)
+[stacktrace]
+#0 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(144): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('columns', 'uri,name,action...')
+#1 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(79): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--columns=uri,n...')
+#2 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(68): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('--columns=uri,n...', true)
+#3 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\Input.php(52): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Command\\Command.php(271): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(153): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(1022): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-06-26 11:17:33] local.ERROR: The "--columns" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--columns\" option does not exist. at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php:217)
+[stacktrace]
+#0 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(144): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('columns', 'uri,name,action...')
+#1 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(79): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--columns=uri,n...')
+#2 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(68): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('--columns=uri,n...', true)
+#3 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\Input.php(52): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Command\\Command.php(271): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(153): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(1022): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-06-26 11:17:36] local.ERROR: The "--columns" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--columns\" option does not exist. at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php:217)
+[stacktrace]
+#0 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(144): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('columns', 'uri,name,action...')
+#1 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(79): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--columns=uri,n...')
+#2 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\ArgvInput.php(68): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken('--columns=uri,n...', true)
+#3 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Input\\Input.php(52): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#4 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Command\\Command.php(271): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#5 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(153): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#6 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(1022): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(314): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\symfony\\console\\Application.php(168): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(102): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(155): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2023-06-30 13:22:52] local.ERROR: Class App\Repositories\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\Interfaces\Repository\BrandRepository::getByWhere) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Class App\\Repositories\\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\\Interfaces\\Repository\\BrandRepository::getByWhere) at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\app\\Repositories\\BrandRepositoryEloquent.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-06-30 13:24:08] local.ERROR: Class App\Repositories\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\Interfaces\Repository\BrandRepository::getByWhere) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Class App\\Repositories\\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\\Interfaces\\Repository\\BrandRepository::getByWhere) at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\app\\Repositories\\BrandRepositoryEloquent.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-06-30 13:25:35] local.ERROR: Class App\Repositories\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\Interfaces\Repository\BrandRepository::getByWhere) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Class App\\Repositories\\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\\Interfaces\\Repository\\BrandRepository::getByWhere) at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\app\\Repositories\\BrandRepositoryEloquent.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-06-30 13:28:59] local.ERROR: Class App\Repositories\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\Interfaces\Repository\BrandRepository::getByWhere) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Class App\\Repositories\\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\\Interfaces\\Repository\\BrandRepository::getByWhere) at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\app\\Repositories\\BrandRepositoryEloquent.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-06-30 13:31:23] local.ERROR: Class App\Repositories\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\Interfaces\Repository\BrandRepository::getByWhere) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Class App\\Repositories\\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\\Interfaces\\Repository\\BrandRepository::getByWhere) at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\app\\Repositories\\BrandRepositoryEloquent.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2023-06-30 13:31:25] local.ERROR: Class App\Repositories\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\Interfaces\Repository\BrandRepository::getByWhere) {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Class App\\Repositories\\BrandRepositoryEloquent contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (App\\Interfaces\\Repository\\BrandRepository::getByWhere) at C:\\Users\\ASUS\\Desktop\\GitHub\\laravel-ecom\\app\\Repositories\\BrandRepositoryEloquent.php:7)
+[stacktrace]
+#0 {main}
+"} 

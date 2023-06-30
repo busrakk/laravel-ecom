@@ -8,4 +8,5 @@ interface BrandRepository
     public function getAll();
     public function delete($id);
     public function insert($data);
+    public function getByWhere($column=['*'], $where);
 }

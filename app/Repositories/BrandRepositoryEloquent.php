@@ -23,4 +23,9 @@ class BrandRepositoryEloquent implements BrandRepository{
         return Brand::create($data);
     }
 
+    public function getByWhere($column=['*'], $where)
+    {
+        return Brand::select($column)->where($where)->get();
+    } 
+
 }

@@ -71,4 +71,15 @@ class BrandService implements BrandContact{
         }
 
     }
+
+    public function getBrandForDropdown()
+    {
+        $response = $this->brandRepository->getByWhere(['id', 'name'], [['status', Brand::STATUS_ACTIVE]]);
+
+        return [
+            'data' => $response,
+            'success' => true,
+            'status' => 'success'
+        ];
+    }
 }

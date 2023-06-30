@@ -40,12 +40,12 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             //'user' => 'bail|required',
             'category' => 'bail|required',
-            // 'brand' => 'bail|required',
+            'brand' => 'bail|required',
             'name' => 'bail|required|max:191',
             'description' => 'bail|required|max:191',
             'price' => 'bail|required|max:20',
             'quantity' => 'bail|required|max:4',
-            'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            //'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -59,7 +59,7 @@ class ProductController extends Controller
         $data = [
             'user_id' => Auth::user()->id,
             'category_id' => $request->category,
-            'brand_id' => $request->category,
+            'brand_id' => $request->brand,
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
@@ -91,7 +91,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             //'user' => 'bail|required',
             'category' => 'bail|required',
-            // 'brand' => 'bail|required',
+            'brand' => 'bail|required',
             'name' => 'bail|required|max:191',
             'description' => 'bail|required|max:191',
             'price' => 'bail|required|max:20',
@@ -110,7 +110,7 @@ class ProductController extends Controller
         $data = [
             'user_id' => Auth::user()->id,
             'category_id' => $request->category,
-            'brand_id' => $request->category,
+            'brand_id' => $request->brand,
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,

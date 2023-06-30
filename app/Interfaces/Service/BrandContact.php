@@ -8,4 +8,5 @@ interface BrandContact
     public function getAll();
     public function deleteBrand($id);
     public function saveBrand($data);
+    public function getBrandForDropdown();
 }

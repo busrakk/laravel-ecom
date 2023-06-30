@@ -63,4 +63,9 @@ class BrandController extends Controller
 
         return response()->json($this->brandService->saveBrand($data));
     }
+
+    public function getBrandForDropdown()
+    {
+        return response()->json($this->brandService->getBrandForDropdown());
+    }
 }

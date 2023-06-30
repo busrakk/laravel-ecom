@@ -71,6 +71,7 @@ Route::middleware(['auth:sanctum'])->group( function(){
     Route::post('product-delete/{id}', [ProductController::class,'destroy']);
     Route::get('/product-user-count', [UserController::class, 'productByUserCount']);
     Route::post('/category-dropdown-list', [CategoryController::class,'getCategoryForDropdown']);
+    Route::post('/brand-dropdown-list', [BrandController::class,'getBrandForDropdown']);
 });
 
 Route::middleware(['auth:sanctum', 'ability:server:user'])->group( function(){
